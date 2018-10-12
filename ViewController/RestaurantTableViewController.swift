@@ -13,6 +13,9 @@ class RestaurantTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RestaurantController.sharedInstance.fetchResultsController.delegate = self
+        
     }
     
 
@@ -79,7 +82,34 @@ class RestaurantTableViewController: UITableViewController {
 // step 1 - Adopt the protocol delegate, and said that we are a delegate, not we have to do what the delgate does to actaul say we are a delegate.
 extension RestaurantTableViewController: ButtonTableViewCellDelegate {
     func isGoodToggled(sender: ButtonTableViewCell) {
+        guard let restaurant = sender.restaurant else { return}
+        RestaurantController.sharedInstance.toggleIsGood(for: restaurant)
+        sender.updateViews()
     }
 }
 
-extension RestaurantTableViewController: NSFetchedResultsControllerDelegate
+extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .move:
+            guard let indexPath = indexPath,
+                let newIndexPath = newIndexPath else { return }
+            tableView.moveRow(at: indexPath, to: newIndexPath)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
