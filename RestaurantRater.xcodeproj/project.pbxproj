@@ -15,6 +15,8 @@
 		191D974D21701C9A0066211C /* Restaurant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D974C21701C9A0066211C /* Restaurant+Convenience.swift */; };
 		191D974F21701CA40066211C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D974E21701CA40066211C /* CoreDataStack.swift */; };
 		191D975121701F710066211C /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D975021701F710066211C /* RestaurantController.swift */; };
+		191D9756217027D10066211C /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D9755217027D10066211C /* RestaurantTableViewController.swift */; };
+		191D9759217029930066211C /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191D9758217029930066211C /* ButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		191D974C21701C9A0066211C /* Restaurant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Convenience.swift"; sourceTree = "<group>"; };
 		191D974E21701CA40066211C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		191D975021701F710066211C /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
+		191D9755217027D10066211C /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		191D9758217029930066211C /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				191D973621701B4F0066211C /* RestaurantRater */,
+				191D9757217027D80066211C /* ViewController */,
 				191D973521701B4F0066211C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +71,7 @@
 				191D974621701B510066211C /* Info.plist */,
 				191D975321701FA90066211C /* Model */,
 				191D975221701F910066211C /* ModelController */,
+				191D9758217029930066211C /* ButtonTableViewCell.swift */,
 			);
 			path = RestaurantRater;
 			sourceTree = "<group>";
@@ -95,6 +101,14 @@
 				191D973B21701B4F0066211C /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		191D9757217027D80066211C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				191D9755217027D10066211C /* RestaurantTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +184,10 @@
 			files = (
 				191D974F21701CA40066211C /* CoreDataStack.swift in Sources */,
 				191D974D21701C9A0066211C /* Restaurant+Convenience.swift in Sources */,
+				191D9756217027D10066211C /* RestaurantTableViewController.swift in Sources */,
 				191D974021701B4F0066211C /* RestaurantRater.xcdatamodeld in Sources */,
 				191D973821701B4F0066211C /* AppDelegate.swift in Sources */,
+				191D9759217029930066211C /* ButtonTableViewCell.swift in Sources */,
 				191D975121701F710066211C /* RestaurantController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
