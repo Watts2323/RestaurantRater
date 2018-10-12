@@ -13,7 +13,7 @@ struct CoreDataStack {
 
 static let container: NSPersistentContainer = {
     
-    let container = NSPersistentContainer(name: "name of file goes here")
+    let container = NSPersistentContainer(name: "RestaurantRater")
     container.loadPersistentStores(completionHandler: { (_, error) in
         if let error = error{
             fatalError("Failed to Load Data from Persistent Store")

@@ -28,7 +28,7 @@ class RestaurantController {
         let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
         //How i want them sorted
        let sortDescriptor = NSSortDescriptor(key: "isGood", ascending: false)
-        
+        fetchRequest.sortDescriptors = [sortDescriptor]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
     }()
     
